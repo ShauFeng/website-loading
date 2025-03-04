@@ -1,67 +1,89 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roblox 當機等候頁面 </title>
+    <title>等待頁面</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f4;
+            background-color: #181818;
+            color: #ffffff;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
         }
-        .container {
-            max-width: 600px;
-            margin: 100px auto;
-            padding: 20px;
-            background: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-        }
+
         h1 {
-            color: #d32f2f;
-        }
-        p {
-            font-size: 16px;
-        }
-        .loader {
-            border: 8px solid #f3f3f3;
-            border-top: 8px solid #d32f2f;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            animation: spin 1s linear infinite;
-            margin: 20px auto;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        .social-links {
+            font-size: 40px;
+            text-align: center;
             margin-top: 20px;
         }
-        .social-links a {
-            text-decoration: none;
-            margin: 0 10px;
-            font-weight: bold;
-            color: #0073e6;
+
+        .container {
+            text-align: center;
+            padding: 30px;
+            background-color: #1f1f1f;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+            max-width: 600px;
+        }
+
+        img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            background-color: #333;
+            height: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: #00aaff;
+            width: 50%;
+            border-radius: 10px;
+            transition: width 1s ease-in-out;
+        }
+
+        p {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            text-align: center;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
 <div class="container">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Roblox_Logo_2022.svg" width="200" alt="Roblox Logo">
-    <h1>Roblox 當機中</h1>
-    <p>我們正在努力修復問題，請稍後再試！</p>
-    <div class="loader"></div>
-    <p>您可以關注我們的社群媒體以獲取最新資訊：</p>
-    <div class="social-links">
-        <a href="https://twitter.com/Roblox" target="_blank">Twitter</a>
-        <a href="https://status.roblox.com" target="_blank">系統狀態</a>
-        <a href="https://devforum.roblox.com" target="_blank">開發者論壇</a>
+    <h1>正在處理中，請稍候...</h1>
+    <div>
+        <img src="https://images.rbxcdn.com/9281912c23312bc0d08ab750afa588cc.png" alt="等待圖片">
     </div>
+    <p>我們知道等待很難，謝謝您的耐心！</p>
+    <div class="progress-bar-container">
+        <div class="progress-bar"></div>
+    </div>
+    <p>預計剩餘時間: 2 分鐘</p>
+</div>
+<div class="footer">
+    <p>© 2025 Roblox Corporation. All rights reserved.</p>
 </div>
 </body>
 </html>
