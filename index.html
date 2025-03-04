@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Roblox</a>
+        </div>
+    </div>
+</div>
+
 <div class="main-content">
     <div class="waiting-container">
         <div class="waiting-left">
@@ -15,13 +23,55 @@
         <div class="waiting-right">
             <h1>Please wait...</h1>
             <p>We are processing your request. Please be patient.</p>
-            <div class="progress-bar-container">
-                <div class="progress-bar"></div>
-            </div>
-            <p>Estimated time remaining: 2 minutes</p>
+            <div class="spinner"></div>
+            <!-- 播放/暫停音樂的按鈕 -->
+            <button id="music-button" onclick="toggleYouTubeMusic()">🔊 Unmute Music</button>
         </div>
     </div>
 </div>
+
 <div class="footer">© 2025 Roblox Corporation. All rights reserved.</div>
+
+<!-- 隱藏的 YouTube 播放器 -->
+<div id="player" style="display: none;"></div>
+
+<script>
+    let player;
+    let isMuted = true;
+
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            height: '0',
+            width: '0',
+            videoId: 'pcxp5rO8VGk', // "It's Raining Tacos" 的影片 ID
+            events: {
+                'onReady': onPlayerReady
+            }
+        });
+    }
+
+    function onPlayerReady(event) {
+        event.target.setVolume(50);  // 設定音量 50%
+        event.target.mute();         // 預設靜音
+        event.target.playVideo();    // 自動播放
+    }
+
+    function toggleYouTubeMusic() {
+        if (player && player.getPlayerState) {
+            if (isMuted) {
+                player.unMute();  // 解除靜音
+                document.getElementById("music-button").innerText = "🔇 Mute Music";
+            } else {
+                player.mute();  // 再次靜音
+                document.getElementById("music-button").innerText = "🔊 Unmute Music";
+            }
+            isMuted = !isMuted;
+        }
+    }
+</script>
+
+<!-- 引入 YouTube API -->
+<script src="https://www.youtube.com/iframe_api"></script>
+
 </body>
 </html>
