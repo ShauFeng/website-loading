@@ -5,94 +5,13 @@ body {
     margin: 0;
     padding: 0;
 }
-
-#header {
-    background-color: #000000;
-    border-bottom: 1px solid #333;
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-}
-
-.container-fluid {
-    padding: 10px 20px;
-}
-
-.navbar-fixed-top {
-    top: 0;
-    left: 0;
-    right: 0;
-}
-
-.rbx-header a {
-    text-decoration: none;
-    color: #e0e0e0;
-}
-
-.rbx-navbar {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-}
-
-.rbx-navbar li {
-    margin-right: 20px;
-}
-
-#right-navigation-header {
-    display: flex;
-    align-items: center;
-}
-
-.navbar-search {
-    position: relative;
-}
-
-.navbar-search input {
-    padding: 6px 12px;
-    border-radius: 4px;
-    border: none;
-}
-
-.navbar-right ul {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar-right li {
-    margin-left: 15px;
-}
-
-.btn-primary-xs, .btn-secondary-sm, .btn-growth-sm {
-    padding: 6px 12px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.signup-button {
-    background-color: #00aaff;
-    color: #ffffff;
-}
-
-.login-action {
-    background-color: transparent;
-    color: #ffffff;
-}
-
 .main-content {
-    padding-top: 100px;
+    padding-top: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 100px);
+    min-height: calc(100vh - 120px);
 }
-
 .waiting-container {
     background-color: #1c1c1c;
     border-radius: 8px;
@@ -101,38 +20,31 @@ body {
     flex-wrap: wrap;
     max-width: 800px;
     width: 90%;
-    margin: 20px;
+    margin: 20px auto;
 }
-
-.waiting-left,
-.waiting-right {
+.waiting-left, .waiting-right {
     flex: 1 1 300px;
     padding: 20px;
 }
-
 .waiting-left {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 .waiting-left img {
     max-width: 100%;
     border-radius: 8px;
 }
-
 .waiting-right h1 {
     font-size: 32px;
     margin-bottom: 10px;
     color: #ffffff;
 }
-
 .waiting-right p {
     font-size: 18px;
     margin-bottom: 15px;
     color: #cccccc;
 }
-
 .progress-bar-container {
     width: 100%;
     background-color: #333;
@@ -141,7 +53,6 @@ body {
     overflow: hidden;
     margin: 15px 0;
 }
-
 .progress-bar {
     height: 100%;
     background: linear-gradient(90deg, #00aaff, #005f99);
@@ -149,7 +60,6 @@ body {
     border-radius: 10px;
     transition: width 1s ease-in-out;
 }
-
 .footer {
     text-align: center;
     font-size: 14px;
