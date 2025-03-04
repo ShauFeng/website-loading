@@ -1,0 +1,147 @@
+body {
+    background-color: #181818;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    background-color: #1f1f1f;
+    border-bottom: 1px solid #333;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.container-fluid {
+    padding: 10px 20px;
+}
+
+.navbar-fixed-top {
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.rbx-header a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.rbx-navbar {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.rbx-navbar li {
+    margin-right: 20px;
+}
+
+#right-navigation-header {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-search {
+    position: relative;
+}
+
+.navbar-search input {
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: none;
+}
+
+.navbar-right ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-right li {
+    margin-left: 15px;
+}
+
+.btn-primary-xs, .btn-secondary-sm, .btn-growth-sm {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.signup-button {
+    background-color: #00aaff;
+    color: #ffffff;
+}
+
+.login-action {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+body > .main-content {
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 100px);
+    text-align: center;
+}
+
+.waiting-container {
+    background-color: #1f1f1f;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    max-width: 600px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.waiting-container h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.waiting-container p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.waiting-container img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.progress-bar-container {
+    width: 100%;
+    background-color: #333;
+    height: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #00aaff;
+    width: 50%;
+    border-radius: 10px;
+    transition: width 1s ease-in-out;
+}
+
+.footer {
+    text-align: center;
+    font-size: 14px;
+    padding: 20px 0;
+    background-color: #1f1f1f;
+    border-top: 1px solid #333;
+}

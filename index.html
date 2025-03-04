@@ -1,89 +1,142 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>等待頁面</title>
-    <style>
-        body {
-            background-color: #181818;
-            color: #ffffff;
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
-        }
-
-        h1 {
-            font-size: 40px;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .container {
-            text-align: center;
-            padding: 30px;
-            background-color: #1f1f1f;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-            max-width: 600px;
-        }
-
-        img {
-            width: 100%;
-            max-width: 350px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-
-        .progress-bar-container {
-            width: 100%;
-            background-color: #333;
-            height: 15px;
-            border-radius: 10px;
-            margin-top: 20px;
-            position: relative;
-        }
-
-        .progress-bar {
-            height: 100%;
-            background-color: #00aaff;
-            width: 50%;
-            border-radius: 10px;
-            transition: width 1s ease-in-out;
-        }
-
-        p {
-            font-size: 18px;
-            margin-top: 20px;
-        }
-
-        .footer {
-            position: absolute;
-            bottom: 10px;
-            text-align: center;
-            font-size: 14px;
-        }
-    </style>
+    <title>Roblox 等候頁面</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
-    <h1>正在處理中，請稍候...</h1>
-    <div>
-        <img src="https://images.rbxcdn.com/9281912c23312bc0d08ab750afa588cc.png" alt="等待圖片">
+<div id="header" class="navbar-fixed-top rbx-header" role="navigation">
+    <div class="container-fluid">
+        <div class="rbx-navbar-header">
+            <div id="header-menu-icon" class="rbx-nav-collapse">
+                <button type="button" class="btn-primary-xs btn-min-width" id="skip-to-main-content">跳到主內容</button>
+            </div>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/home">
+                    <span class="icon-logo"></span><span class="icon-logo-r"></span>
+                </a>
+            </div>
+        </div>
+        <ul class="nav rbx-navbar hidden-xs hidden-sm col-md-5 col-lg-4">
+            <li>
+                <a class="font-header-2 nav-menu-title text-header charts-rename-exp-control" href="/discover">探索</a>
+                <a class="font-header-2 nav-menu-title text-header charts-rename-exp-treatment" href="/charts">圖表</a>
+            </li>
+            <li>
+                <a class="font-header-2 nav-menu-title text-header" href="/catalog">市集</a>
+            </li>
+            <li>
+                <a id="header-develop-md-link" class="font-header-2 nav-menu-title text-header" href="https://create.roblox.com/">創作</a>
+            </li>
+            <li id="navigation-robux-container">
+                <div>
+                    <a class="font-header-2 nav-menu-title text-header robux-menu-btn" href="https://www.roblox.com/upgrades/robux?ctx=navpopover">Robux</a>
+                </div>
+            </li>
+        </ul>
+        <ul class="nav rbx-navbar hidden-md hidden-lg col-xs-12">
+            <li>
+                <a class="font-header-2 nav-menu-title text-header charts-rename-exp-control" href="/discover">探索</a>
+                <a class="font-header-2 nav-menu-title text-header charts-rename-exp-treatment" href="/charts">圖表</a>
+            </li>
+            <li>
+                <a class="font-header-2 nav-menu-title text-header" href="/catalog">市集</a>
+            </li>
+            <li>
+                <a id="header-develop-sm-link" class="font-header-2 nav-menu-title text-header" href="https://create.roblox.com/">創作</a>
+            </li>
+            <li id="navigation-robux-mobile-container">
+                <div>
+                    <a class="font-header-2 nav-menu-title text-header robux-menu-btn" href="https://www.roblox.com/upgrades/robux?ctx=navpopover">Robux</a>
+                </div>
+            </li>
+        </ul>
+        <div id="right-navigation-header">
+            <div data-testid="navigation-search-input" class="navbar-left navbar-search col-xs-5 col-sm-6 col-md-2 col-lg-3 shown" role="search">
+                <div class="input-group">
+                    <form name="search-form" action="/search">
+                        <div class="form-has-feedback">
+                            <input id="navbar-search-input" type="search" name="search-bar" data-testid="navigation-search-input-field" class="form-control input-field new-input-field" placeholder="搜尋" maxlength="120" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" value="">
+                        </div>
+                    </form>
+                    <div class="input-group-btn">
+                        <button data-testid="navigation-search-input-search-button" class="input-addon-btn" type="submit">
+                            <span class="icon-common-search-sm"></span>
+                        </button>
+                    </div>
+                </div>
+                <ul class="dropdown-menu new-dropdown-menu" role="menu">
+                    <li class="navbar-search-option rbx-clickable-li new-selected">
+                        <a class="new-navbar-search-anchor" href="https://www.roblox.com/discover/?Keyword=">
+                            <span class="icon-menu-games-off navbar-list-option-icon"></span>
+                            <span class="navbar-list-option-text"></span>
+                            <span class="navbar-list-option-suffix">（體驗）</span>
+                        </a>
+                    </li>
+                    <li class="navbar-search-option rbx-clickable-li">
+                        <a class="new-navbar-search-anchor" href="https://www.roblox.com/search/users?keyword=">
+                            <span class="icon-menu-profile navbar-list-option-icon"></span>
+                            <span class="navbar-list-option-text"></span>
+                            <span class="navbar-list-option-suffix">（人）</span>
+                        </a>
+                    </li>
+                    <li class="navbar-search-option rbx-clickable-li">
+                        <a class="new-navbar-search-anchor" href="https://www.roblox.com/catalog?CatalogContext=1&amp;Keyword=">
+                            <span class="icon-menu-shop navbar-list-option-icon"></span>
+                            <span class="navbar-list-option-text"></span>
+                            <span class="navbar-list-option-suffix">（市集）</span>
+                        </a>
+                    </li>
+                    <li class="navbar-search-option rbx-clickable-li">
+                        <a class="new-navbar-search-anchor" href="https://www.roblox.com/search/communities?keyword=">
+                            <span class="icon-menu-groups navbar-list-option-icon"></span>
+                            <span class="navbar-list-option-text"></span>
+                            <span class="navbar-list-option-suffix">（社群）</span>
+                        </a>
+                    </li>
+                    <li class="navbar-search-option rbx-clickable-li">
+                        <a class="new-navbar-search-anchor" href="https://create.roblox.com/marketplace/models?keyword=">
+                            <span class="icon-menu-library navbar-list-option-icon"></span>
+                            <span class="navbar-list-option-text"></span>
+                            <span class="navbar-list-option-suffix">（創作者市集）</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar-right rbx-navbar-right">
+                <ul class="nav navbar-right rbx-navbar-right-nav">
+                    <li class="signup-button-container">
+                        <a class="rbx-navbar-signup btn-growth-sm nav-menu-title signup-button" href="https://www.roblox.com/account/signupredir?returnUrl=https%3A%2F%2Fwww.roblox.com%2Freedem" id="sign-up-button">註冊</a>
+                    </li>
+                    <li class="login-action">
+                        <a class="rbx-navbar-login btn-secondary-sm nav-menu-title rbx-menu-item" href="https://www.roblox.com/login?returnUrl=https%3A%2F%2Fwww.roblox.com%2Freedem">登入</a>
+                    </li>
+                    <li class="rbx-navbar-right-search">
+                        <button type="button" class="rbx-menu-item btn-navigation-nav-search-white-md">
+                            <span class="icon-nav-search-white"></span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
-    <p>我們知道等待很難，謝謝您的耐心！</p>
-    <div class="progress-bar-container">
-        <div class="progress-bar"></div>
+</div>
+<div class="main-content">
+    <div class="waiting-container">
+        <h1>正在處理中，請稍候...</h1>
+        <img src="https://images.rbxcdn.com/9281912c23312bc0d08ab750afa588cc.png" alt="等待中">
+        <p>我們知道等待很難，謝謝您的耐心！</p>
+        <div class="progress-bar-container">
+            <div class="progress-bar"></div>
+        </div>
+        <p>預計剩餘時間: 2 分鐘</p>
     </div>
-    <p>預計剩餘時間: 2 分鐘</p>
 </div>
 <div class="footer">
-    <p>© 2025 Roblox Corporation. All rights reserved.</p>
+    © 2025 Roblox Corporation. All rights reserved.
 </div>
+<script src="script.js"></script>
 </body>
 </html>
