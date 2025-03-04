@@ -1,13 +1,13 @@
 body {
-    background-color: #181818;
-    color: #ffffff;
+    background-color: #141414;
+    color: #e0e0e0;
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
 }
 
 #header {
-    background-color: #1f1f1f;
+    background-color: #000000;
     border-bottom: 1px solid #333;
     position: fixed;
     width: 100%;
@@ -26,7 +26,7 @@ body {
 
 .rbx-header a {
     text-decoration: none;
-    color: #ffffff;
+    color: #e0e0e0;
 }
 
 .rbx-navbar {
@@ -51,7 +51,7 @@ body {
 }
 
 .navbar-search input {
-    padding: 5px 10px;
+    padding: 6px 12px;
     border-radius: 4px;
     border: none;
 }
@@ -69,7 +69,7 @@ body {
 }
 
 .btn-primary-xs, .btn-secondary-sm, .btn-growth-sm {
-    padding: 5px 10px;
+    padding: 6px 12px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -85,55 +85,67 @@ body {
     color: #ffffff;
 }
 
-body > .main-content {
+.main-content {
     padding-top: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: calc(100vh - 100px);
-    text-align: center;
 }
 
 .waiting-container {
-    background-color: #1f1f1f;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-    max-width: 600px;
+    background-color: #1c1c1c;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 800px;
     width: 90%;
-    margin: 0 auto;
+    margin: 20px;
 }
 
-.waiting-container h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
+.waiting-left,
+.waiting-right {
+    flex: 1 1 300px;
+    padding: 20px;
 }
 
-.waiting-container p {
+.waiting-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.waiting-left img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.waiting-right h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.waiting-right p {
     font-size: 18px;
-    margin-bottom: 20px;
-}
-
-.waiting-container img {
-    width: 100%;
-    max-width: 350px;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    color: #cccccc;
 }
 
 .progress-bar-container {
     width: 100%;
     background-color: #333;
-    height: 15px;
+    height: 20px;
     border-radius: 10px;
-    margin-top: 20px;
-    position: relative;
+    overflow: hidden;
+    margin: 15px 0;
 }
 
 .progress-bar {
     height: 100%;
-    background-color: #00aaff;
-    width: 50%;
+    background: linear-gradient(90deg, #00aaff, #005f99);
+    width: 0%;
     border-radius: 10px;
     transition: width 1s ease-in-out;
 }
@@ -142,6 +154,7 @@ body > .main-content {
     text-align: center;
     font-size: 14px;
     padding: 20px 0;
-    background-color: #1f1f1f;
+    background-color: #000000;
     border-top: 1px solid #333;
+    color: #888888;
 }
