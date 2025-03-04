@@ -18,14 +18,24 @@
 <div class="main-content">
     <div class="waiting-container">
         <div class="waiting-left">
-            <img src="https://images.rbxcdn.com/9281912c23312bc0d08ab750afa588cc.png" alt="Waiting Image">
+            <img src="https://images.rbxcdn.com/9281912c23312bc0d08ab750afa588cc.png" alt="Waiting Image" class="center-image">
         </div>
         <div class="waiting-right">
             <h1>Please wait...</h1>
             <p>We are processing your request. Please be patient.</p>
             <div class="spinner"></div>
-            <!-- 播放/暫停音樂的按鈕 -->
-            <button id="music-button" onclick="toggleYouTubeMusic()">🔊 Unmute Music</button>
+            <p class="music-text">Enjoy some music while you wait!</p>
+
+            <!-- 新增的 YouTube 影片區塊 -->
+            <div class="youtube-container">
+                <iframe width="100%" height="220"
+                        src="https://www.youtube.com/embed/fjR0uUKZCpY?autoplay=1&mute=0&loop=1&playlist=fjR0uUKZCpY"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="autoplay; encrypted-media"
+                        allowfullscreen>
+                </iframe>
+            </div>
         </div>
     </div>
 </div>
@@ -37,13 +47,13 @@
 
 <script>
     let player;
-    let isMuted = true;
+    let isPlaying = false;
 
     function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
             height: '0',
             width: '0',
-            videoId: 'pcxp5rO8VGk', // "It's Raining Tacos" 的影片 ID
+            videoId: 'fjR0uUKZCpY', // 新影片 ID
             events: {
                 'onReady': onPlayerReady
             }
@@ -53,19 +63,21 @@
     function onPlayerReady(event) {
         event.target.setVolume(50);  // 設定音量 50%
         event.target.mute();         // 預設靜音
-        event.target.playVideo();    // 自動播放
     }
 
     function toggleYouTubeMusic() {
         if (player && player.getPlayerState) {
-            if (isMuted) {
-                player.unMute();  // 解除靜音
-                document.getElementById("music-button").innerText = "🔇 Mute Music";
+            const button = document.getElementById("music-button");
+
+            if (!isPlaying) {
+                player.playVideo();
+                player.unMute();
+                button.innerText = "⏸";  // 改成暫停圖示
             } else {
-                player.mute();  // 再次靜音
-                document.getElementById("music-button").innerText = "🔊 Unmute Music";
+                player.pauseVideo();
+                button.innerText = "▶";  // 改回播放圖示
             }
-            isMuted = !isMuted;
+            isPlaying = !isPlaying;
         }
     }
 </script>

@@ -1,3 +1,4 @@
+/* 全局樣式 */
 body {
     background-color: #141414;
     color: #e0e0e0;
@@ -6,6 +7,7 @@ body {
     padding: 0;
 }
 
+/* 固定導覽列 */
 .navbar-fixed-top {
     background-color: #1c1c1c;
     padding: 10px 20px;
@@ -25,51 +27,7 @@ body {
     text-decoration: none;
 }
 
-/* 放大並去背Roblox Logo */
-.roblox-logo {
-    height: 50px;  /* 您可以根據需求調整大小 */
-    width: auto;
-    background-color: transparent;  /* 確保圖片背景透明 */
-}
-
-.nav-menu-title {
-    font-size: 18px;
-    margin-right: 15px;
-    text-decoration: none;
-    color: #ffffff;
-}
-
-.nav-menu-title:hover {
-    color: #00aaff;
-}
-
-.robux-menu-btn {
-    font-weight: bold;
-    color: #ffd700;
-}
-
-.navbar-right {
-    display: flex;
-    align-items: center;
-}
-
-.btn-signup, .btn-login {
-    background-color: #00aaff;
-    color: white;
-    text-decoration: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    margin-left: 10px;
-}
-
-.btn-login {
-    background-color: #ff4500;
-}
-
-.btn-signup:hover, .btn-login:hover {
-    opacity: 0.8;
-}
-
+/* 主要內容 */
 .main-content {
     padding-top: 100px;
     display: flex;
@@ -95,11 +53,20 @@ body {
     text-align: center;
 }
 
+/* 左邊圖片居中 */
+.waiting-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
 .waiting-left img {
     max-width: 100%;
     border-radius: 8px;
 }
 
+/* 轉圈圈動畫 */
 .spinner {
     width: 50px;
     height: 50px;
@@ -115,6 +82,25 @@ body {
     to { transform: rotate(360deg); }
 }
 
+/* 音樂文字樣式 */
+.music-text {
+    font-size: 18px;
+    color: #e0e0e0;
+    font-weight: bold;
+    margin-top: 10px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* 影片區塊樣式 */
+.youtube-container {
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.8);
+}
+
+/* 頁尾 */
 .footer {
     text-align: center;
     font-size: 14px;
