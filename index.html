@@ -24,9 +24,7 @@
             <h1>Please wait...</h1>
             <p>We are processing your request. Please be patient.</p>
             <div class="spinner"></div>
-            <p class="music-text">Enjoy some music while you wait!</p>
-
-            <!-- 新增的 YouTube 影片區塊 -->
+            <p class="music-text">Enjoy this short video while waiting!</p>
             <div class="youtube-container">
                 <iframe width="100%" height="220"
                         src="https://www.youtube.com/embed/fjR0uUKZCpY?autoplay=1&mute=0&loop=1&playlist=fjR0uUKZCpY"
@@ -42,7 +40,6 @@
 
 <div class="footer">© 2025 Roblox Corporation. All rights reserved.</div>
 
-<!-- 隱藏的 YouTube 播放器 -->
 <div id="player" style="display: none;"></div>
 
 <script>
@@ -53,36 +50,14 @@
         player = new YT.Player('player', {
             height: '0',
             width: '0',
-            videoId: 'fjR0uUKZCpY', // 新影片 ID
+            videoId: 'fjR0uUKZCpY',
             events: {
                 'onReady': onPlayerReady
             }
         });
     }
-
-    function onPlayerReady(event) {
-        event.target.setVolume(50);  // 設定音量 50%
-        event.target.mute();         // 預設靜音
-    }
-
-    function toggleYouTubeMusic() {
-        if (player && player.getPlayerState) {
-            const button = document.getElementById("music-button");
-
-            if (!isPlaying) {
-                player.playVideo();
-                player.unMute();
-                button.innerText = "⏸";  // 改成暫停圖示
-            } else {
-                player.pauseVideo();
-                button.innerText = "▶";  // 改回播放圖示
-            }
-            isPlaying = !isPlaying;
-        }
-    }
 </script>
 
-<!-- 引入 YouTube API -->
 <script src="https://www.youtube.com/iframe_api"></script>
 
 </body>
